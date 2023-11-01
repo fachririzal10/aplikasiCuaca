@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aplikasi Cek Cuaca</title>
+        <link rel="icon" href="/img/cuaca.png">
+        <link rel="stylesheet" href="/css/style.css">
+        <script src="/js/app.js"></script>
+    </head>
+    
+    <body>
+        <div class="main-content">
+            {{>header}}
+            <p>{{faq1}}</p>
+            <p>A: Halaman Pusat Bantuan ini adalah sumber informasi yang dirancang untuk memberikan penjelasan, panduan, dan jawaban atas pertanyaan umum terkait dengan layanan kami. Anda dapat menemukan informasi tentang cara menggunakan fitur-fitur kami, mengatasi masalah umum, dan memahami konsep dasar terkait dengan layanan kami.</p>
+            <p>{{faq2}}</p>
+            <p>A: API adalah singkatan dari Application Programming Interface. Ini adalah kumpulan aturan dan protokol yang memungkinkan perangkat lunak untuk berinteraksi satu sama lain. API memungkinkan pengembang untuk menggunakan fungsionalitas dari komponen perangkat lunak lain tanpa harus mengetahui detail implementasinya. Ini memudahkan integrasi dan interaksi antara berbagai aplikasi.</p>
+            <p>{{faq3}}</p>
+            <p>A: 1. Weatherstack : layanan cuaca yang menyediakan data cuaca dalam format yang mudah diakses melalui API.</p>
+            <p> 2. Mediastack:  layanan berita dan media yang menyediakan akses ke berita dan artikel dari berbagai sumber berita di seluruh dunia melalui API.</p>
+            <p> 3. Mapbox: platform pemetaan dan lokasi yang menyediakan beragam alat dan layanan, termasuk pemetaan interaktif, navigasi, pencarian lokasi.</p>
+            <p>{{faq4}}</p>
+            <p>A: Salah satu pola arsitektur API yang umum digunakan adalah RESTful (Representational State Transfer). RESTful adalah pendekatan arsitektur yang didasarkan pada prinsip-prinsip HTTP dan memanfaatkan metode HTTP seperti GET, POST, PUT, dan DELETE untuk berinteraksi dengan sumber daya melalui URL.</p>
+        </div>
+        {{>footer}}
+    </body> 
+</html>

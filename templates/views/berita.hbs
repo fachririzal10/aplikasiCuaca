@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aplikasi Cek Cuaca</title>
+        <link rel="icon" href="/img/cuaca.png">
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    
+    <body>
+        <div class="main-content">
+            {{>header}}
+            <div id="news"></div>
+            <script>
+                var berita = "http://api.mediastack.com/v1/news?access_key=dfd99c9e82614792e78e8e46ec588c9d&languages=en&countries=id&limit=5";
+
+                fetch(berita)
+                .then(response => response.json())
+                .then(data => {
+                    if (data && data.data) {
+                        var articles = data.data;
+                        var newsHtml = "";
+
+                        for (var i = 0; i < articles.length; i++) {
+                            var article = articles[i];
+                            newsHtml += "<div class='isi'>";
+                            newsHtml += "<img src='" + article.image + "'>";
+                            newsHtml += "<h2>" + article.title + "</h2>";
+                            newsHtml += "<p>" + article.description + "</p>";
+                            newsHtml += "<a href='" + article.url + "'>Read More</a>";
+                            newsHtml += "</div>";
+                               
+                        }
+                        document.getElementById("news").innerHTML = newsHtml;
+                        console.log("berhasil");
+                    }
+                    else {
+                        console.log("error: invalid data");
+                    }
+                    
+                })
+                .catch(error => console.log(error));
+            </script>
+        </div>
+        {{>footer}} 
+    </body>
+</html>

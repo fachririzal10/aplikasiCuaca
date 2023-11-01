@@ -5,7 +5,7 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/prediksiCuaca')
 
 const app = express()
-
+const port = process.env.PORT || 4000
 //Medefinisikan jalur/path untuk konfigurasi express
 const direktoriPublic = path.join(__dirname, '../public')
 const direktoriViews = path.join(__dirname, '../templates/views')
@@ -96,6 +96,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(4000, () => {
-    console.log('server berjalan di port 4000')
+app.listen(port, () => {
+    console.log('server berjalan pada port '+ port) 
 })
